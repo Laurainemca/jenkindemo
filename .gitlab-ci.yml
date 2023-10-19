@@ -1,0 +1,17 @@
+#maven image latest and create two stages for maven compile and test
+image: 'maven:latest'
+stages:
+  - compile
+  - test
+#compile stage
+maven-compile:
+  stage: compile
+  script:"mvn compile"
+  tags:
+    - ci
+#test stage
+maven-test:
+  stage: test
+  script:"mvn test"
+  tags:
+    - ci
